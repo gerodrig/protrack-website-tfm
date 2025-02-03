@@ -1,3 +1,7 @@
+---
+import { Image } from "astro:assets";
+---
+
 <section class="bg-white border-b border-black/5">
   <div class="w-full mx-auto md:px-12 px-8 max-w-7xl lg:px-16">
     <div
@@ -12,7 +16,7 @@
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path
+            <!-- <path
               d="M55.5 0H77.5L58.5 32H36.5L55.5 0Z"
               class="ccustom"
               fill="#283CFF"></path>
@@ -25,7 +29,14 @@
               class="ccompli2"
               fill="#808CFF"></path>
           </svg>
-          <span class="font-bold font-display">AstroSaas</span>
+          <span class="font-bold font-display">Protrack</span> -->
+          <Image
+            class="h-8"
+            src="/images/protrack.svg"
+            width={256}
+            height={256}
+            alt="Protrack logo"
+          />
         </a>
         <button
           @click="open = !open"
@@ -57,21 +68,21 @@
       <nav
         :class="{'flex': open, 'hidden': !open}"
         class="flex-col items-center flex-grow gap-3 hidden md:pb-0 md:flex md:justify-end md:flex-row"
-      >
+            >
         <a
           class=" text-sm font-medium text-black hover:text-accent-600 lg:ml-auto"
-          href="/#features">Features</a
+          href="/#features">Características</a
         >
         <a
           class=" text-sm font-medium text-black hover:text-accent-600"
-          href="/#pricing">Pricing</a
+          href="/#pricing">Precios</a
         >
 
         <a
           class=" text-sm font-medium text-black hover:text-accent-600"
           href="/faq"
         >
-          Faq</a
+          Preguntas Frecuentes</a
         >
 
         <div class="inline-flex items-center gap-2 list-none lg:ml-auto">
@@ -79,13 +90,13 @@
             href="/signup"
             class="flex items-center justify-center transition-all duration-200 focus:ring-2 focus:outline-none text-base-500 bg-white hover:text-accent-500 ring-1 ring-base-200 focus:ring-accent-500 h-8 px-4 py-2 text-xs font-medium rounded-md"
           >
-            Sign up
+            Registrarse
           </a>
           <a
             href="/login"
             class="flex items-center justify-center transition-all duration-200 ring-1 focus:ring-2 ring-base-100 focus:outline-none text-base-700 bg-base-50 hover:bg-white focus:ring-base-500/50 h-8 px-4 py-2 text-xs font-medium rounded-md"
           >
-            Log in
+            Iniciar sesión
           </a>
         </div>
       </nav>

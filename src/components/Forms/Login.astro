@@ -3,18 +3,22 @@
     <div class="max-w-lg mx-auto">
       <div class="text-center lg:text-balance">
         <h2
-          class="text-xl leading-tight tracking-tight sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-base-900 lg:text-balance"
+          class="text-xl leading-tight tracking-tight sm:text-2xl md:text-3xl lg:text-4xl 
+                 font-semibold text-base-900 lg:text-balance"
         >
-          Sign in to your account
+          Inicia sesión en tu cuenta
         </h2>
         <p class="text-base leading-normal mt-4 text-base-500 font-medium">
-          Welcome back! Please enter your email and password to sign in.
+          ¡Bienvenido(a) de nuevo! Ingresa tu correo y contraseña para acceder.
         </p>
       </div>
-      <form action="#" method="POST" class="mx-auto mt-12 max-w-lg">
+
+      <!-- Ajusta "action" y "method" según tu implementación real (endpoint en Astro o similar). -->
+      <form action="/signin" method="POST" class="mx-auto mt-12 max-w-lg">
+        <!-- Correo electrónico -->
         <div>
-          <label class="text-base leading-normal text-base-500 font-medium">
-            Email
+          <label for="email" class="text-base leading-normal text-base-500 font-medium">
+            Correo electrónico
           </label>
           <div class="mt-2.5">
             <input
@@ -25,29 +29,68 @@
               required
               aria-required="true"
               aria-describedby="email-error"
-              placeholder="Your email"
-              class="block w-full h-10 px-4 py-2 text-sm text-accent-700 duration-300 bg-white border border-transparent rounded-lg appearance-none ring-1 ring-base-200 placeholder-base-400 focus:border-base-300 focus:bg-transparent focus:outline-none focus:ring-accent-500 focus:ring-offset-2 focus:ring-2 sm:text-sm"
+              placeholder="Tu correo electrónico"
+              class="block w-full h-10 px-4 py-2 text-sm text-accent-700 duration-300 bg-white 
+                     border border-transparent rounded-lg appearance-none ring-1 ring-base-200 
+                     placeholder-base-400 focus:border-base-300 focus:bg-transparent 
+                     focus:outline-none focus:ring-accent-500 focus:ring-offset-2 focus:ring-2 
+                     sm:text-sm"
             />
             <span id="email-error" class="text-red-600 text-sm hidden">
-              Please enter a valid email address.
+              Por favor ingresa una dirección de correo válida.
             </span>
           </div>
         </div>
+
+        <!-- Contraseña -->
+        <div class="mt-6">
+          <label for="password" class="text-base leading-normal text-base-500 font-medium">
+            Contraseña
+          </label>
+          <div class="mt-2.5">
+            <input
+              type="password"
+              name="password"
+              id="password"
+              required
+              aria-required="true"
+              aria-describedby="password-error"
+              placeholder="Ingresa tu contraseña"
+              class="block w-full h-10 px-4 py-2 text-sm text-accent-700 duration-300 bg-white 
+                     border border-transparent rounded-lg appearance-none ring-1 ring-base-200 
+                     placeholder-base-400 focus:border-base-300 focus:bg-transparent 
+                     focus:outline-none focus:ring-accent-500 focus:ring-offset-2 focus:ring-2 
+                     sm:text-sm"
+            />
+            <span id="password-error" class="text-red-600 text-sm hidden">
+              Por favor ingresa tu contraseña.
+            </span>
+          </div>
+        </div>
+
+        <!-- Botón de "Iniciar sesión" -->
         <div class="mt-10">
           <button
-            class="flex items-center justify-center transition-all duration-200 focus:ring-2 focus:outline-none text-white bg-accent-600 hover:bg-accent-700 focus:ring-accent-500/50 h-10 px-6 py-3 text-base font-medium rounded-lg w-full"
+            type="submit"
+            class="flex items-center justify-center transition-all duration-200 
+                   focus:ring-2 focus:outline-none text-white bg-accent-600 hover:bg-accent-700 
+                   focus:ring-accent-500/50 h-10 px-6 py-3 text-base font-medium 
+                   rounded-lg w-full"
           >
-            Sign in
+            Iniciar sesión
           </button>
         </div>
+
+        <!-- Enlace a registro, si aún no tiene cuenta -->
         <div class="flex items-center mt-4">
           <p class="text-sm leading-normal text-base-500 font-medium">
-            Don't have an account?
+            ¿No tienes una cuenta?&nbsp;
             <a
-              class="text-base leading-normal text-accent-500 font-medium hover:text-base-500"
-              href="#_"
+              class="text-base leading-normal text-accent-500 font-medium hover:text-base-500 
+                     underline"
+              href="/signup"
             >
-              Sign up
+              Regístrate
             </a>
           </p>
         </div>

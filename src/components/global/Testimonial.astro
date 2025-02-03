@@ -1,31 +1,45 @@
+---
+const testimonials = [
+  {
+    quote: "ProTrack nos ha permitido reducir los tiempos de producción en un 30% al optimizar la gestión de órdenes y recursos.",
+    name: "Laura Fernández",
+    role: "Gerente de Producción - TechManufacturing",
+    image: "https://oxbowui.com/avatars/2.jpg",
+  },
+  {
+    quote: "Gracias a ProTrack, ahora tenemos visibilidad total de nuestro inventario y seguimiento en tiempo real de cada pedido.",
+    name: "Carlos Méndez",
+    role: "Jefe de Logística - Industrial Solutions",
+    image: "https://oxbowui.com/avatars/3.jpg",
+  },
+  {
+    quote: "La integración con nuestro ERP fue perfecta. Ahora automatizamos el flujo de trabajo y minimizamos errores.",
+    name: "Ana Rojas",
+    role: "Directora de Operaciones - SmartFactory",
+    image: "https://oxbowui.com/avatars/4.jpg",
+  },
+];
+---
+
 <section>
   <div class="px-8 py-24 mx-auto md:px-12 lg:px-24 max-w-7xl relative">
     <div class="text-center max-w-4xl mx-auto">
-      <div>
-        <blockquote
-          class="text-2xl leading-tight tracking-tight sm:text-3xl md:text-4xl lg:text-5xl text-base-900 italic font-medium"
-        >
-          "Being in the financial industry, we were always looking for ways to
-          enhance our transactions' security and efficiency."
-        </blockquote>
-      </div>
-      <figcaption class="flex text-left justify-center mt-8">
-        <div class="flex items-center gap-4">
-          <img
-            class="object-cover rounded-full size-12"
-            src="https://oxbowui.com/avatars/1.jpg"
-            alt="#_"
-          />
-          <div>
-            <h3 class="text-base leading-normal text-base-900 font-medium">
-              Fernando Monte
-            </h3>
-            <p class="text-xs leading-normal text-base-400 font-medium">
-              Designer
-            </p>
-          </div>
+      {testimonials.map(({ quote, name, role, image }) => (
+        <div class="mb-12">
+          <blockquote class="text-2xl leading-tight tracking-tight sm:text-3xl md:text-4xl lg:text-5xl text-base-900 italic font-medium">
+            "{quote}"
+          </blockquote>
+          <figcaption class="flex text-left justify-center mt-8">
+            <div class="flex items-center gap-4">
+              <img class="object-cover rounded-full size-12" src={image} alt={name} />
+              <div>
+                <h3 class="text-base leading-normal text-base-900 font-medium">{name}</h3>
+                <p class="text-xs leading-normal text-base-400 font-medium">{role}</p>
+              </div>
+            </div>
+          </figcaption>
         </div>
-      </figcaption>
+      ))}
     </div>
   </div>
 </section>

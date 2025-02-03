@@ -1,14 +1,31 @@
 ---
+
+import { siteConfig } from '@utils/config';
+
+
+type Props = {
+  title: string;
+  description?: string;
+  image?: string;
+  url?: string;
+};
+
+// Obtener la URL canónica completa para la página actual
+const fullCanonicalUrl = new URL(Astro.url.pathname, siteConfig.canonicalUrl).href;
+
 import BaseHead from "../components/BaseHead.astro";
 import Navigation from "../components/global/Navigation.astro";
 import Footer from "../components/global/Footer.astro";
+const props = Astro.props;
 ---
+
+<!DOCTYPE html>
 <html
-  lang="en"
+  lang="es"
   class="scroll-smooth selection:bg-accent-500 selection:text-white no-touchevents hydrated"
 >
   <head>
-    <BaseHead />
+    <BaseHead {...props} />
   </head>
   <body class="bg-white flex flex-col min-h-svh">
     <Navigation/>

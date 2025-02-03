@@ -1,21 +1,26 @@
-<section x-data="{duration: 'monthly'}">
+---
+
+const {id } = Astro.props;
+---
+
+<section id={id} x-data="{duration: 'monthly'}">
   <div
     class="mx-auto w-full lg:px-24 max-w-7xl md:px-12 items-center px-8 py-24"
   >
     <div class="max-w-xl text-center mx-auto">
       <p class="text-sm leading-normal font-bold uppercase text-accent-600">
-        Tagline
+        Planes de suscripción para tu empresa
       </p>
       <h2
         class="text-xl leading-tight tracking-tight sm:text-2xl md:text-3xl lg:text-4xl mt-4 font-semibold text-base-900 lg:text-balance"
       >
-        Equip your business with world class software
+        Elige el plan ideal para optimizar tu producción
       </h2>
       <p
         class="text-base leading-normal mt-4 text-base-500 font-medium lg:text-balance"
       >
-        Choose a plan that works the best for you and your team. Start small,
-        upgrade when you need to.
+        Escoge un plan flexible según las necesidades de tu empresa. Puedes
+        actualizar cuando lo necesites.
       </p>
       <div
         aria-labelledby="pricing-toggle"
@@ -37,7 +42,7 @@
           type="button"
           :aria-pressed="duration === 'monthly'"
         >
-          Monthly
+          Mensual
         </button>
         <!-- Annual Pricing Button -->
         <button
@@ -48,7 +53,7 @@
           type="button"
           :aria-pressed="duration === 'annual'"
         >
-          Annual
+          Anual
         </button>
       </div>
     </div>
@@ -60,24 +65,22 @@
         class="flex flex-col h-full p-1 lg:py-1 rounded-3xl bg-base-50 ring-4 ring-base-50 border border-base-200"
       >
         <div>
-          <div
-            class="flex flex-col gap-4 p-8 bg-white rounded-[1.3rem] h-full "
-          >
+          <div class="flex flex-col gap-4 p-8 bg-white rounded-[1.3rem] h-full">
             <div class="flex items-start justify-between w-full">
               <div>
                 <h3
                   class="text-lg leading-normal sm:text-xl md:text-2xl font-medium text-base-900"
                 >
-                  Core
+                  Básico
                 </h3>
                 <p class="text-base leading-normal font-medium text-base-500">
-                  For individuals
+                  Para individuos
                 </p>
               </div>
             </div>
             <p class="text-base leading-normal font-medium text-base-500">
-              This subscription tier caters to individuals and hobbyists seeking
-              features.
+              Ideal para pequeñas empresas y startups que buscan digitalizar su
+              producción.
             </p>
           </div>
         </div>
@@ -92,9 +95,9 @@
             <span
               class="text-sm font-normal font-sans tracking-normal text-base-500"
             >
-              <span x-show="duration === 'monthly'">/month</span>
+              <span x-show="duration === 'monthly'">/mensual</span>
               <span x-show="duration === 'annual'" style="display: none"
-                >/annually</span
+                >/anualmente</span
               >
             </span>
           </p>
@@ -102,14 +105,14 @@
             <button
               class="flex items-center justify-center transition-all duration-200 focus:ring-2 focus:outline-none text-base-500 bg-white hover:text-accent-500 ring-1 ring-base-200 focus:ring-accent-500 h-9 px-4 py-2 text-sm font-medium rounded-md w-full"
             >
-              Get Started
+                Comenzar
             </button>
           </div>
           <div class="mt-8">
             <p
               class="text-sm leading-normal font-medium uppercase text-base-500"
             >
-              Core plan includes:
+              Plan Básico incluye:
             </p>
             <ul class="flex flex-col mt-4 gap-y-3 text-base-500" role="list">
               <li class="flex items-center gap-2">
@@ -127,7 +130,7 @@
                   <path d="M5 12l5 5l10 -10"></path>
                 </svg>
                 <span class="text-base leading-normal">
-                  Unlimited members
+                    Miembros ilimitados
                 </span>
               </li>
               <li class="flex items-center gap-2">
@@ -144,7 +147,7 @@
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                   <path d="M5 12l5 5l10 -10"></path>
                 </svg>
-                <span class="text-base leading-normal"> 1 Team </span>
+                <span class="text-base leading-normal"> 1 Equipo </span>
               </li>
               <li class="flex items-center gap-2">
                 <svg
@@ -160,25 +163,7 @@
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                   <path d="M5 12l5 5l10 -10"></path>
                 </svg>
-                <span class="text-base leading-normal"> 50 issues </span>
-              </li>
-              <li class="flex items-center gap-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check size-4"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                  <path d="M5 12l5 5l10 -10"></path>
-                </svg>
-                <span class="text-base leading-normal">
-                  Slack, GitHub, and API access
-                </span>
+                <span class="text-base leading-normal"> 50 reportes </span>
               </li>
               <li class="flex items-center gap-2">
                 <svg
@@ -195,7 +180,7 @@
                   <path d="M5 12l5 5l10 -10"></path>
                 </svg>
                 <span class="text-base leading-normal">
-                  Basic reporting tools
+                    Acceso a Slack, GitHub y API
                 </span>
               </li>
               <li class="flex items-center gap-2">
@@ -213,7 +198,7 @@
                   <path d="M5 12l5 5l10 -10"></path>
                 </svg>
                 <span class="text-base leading-normal">
-                  Community support
+                    Herramientas básicas de informes
                 </span>
               </li>
               <li class="flex items-center gap-2">
@@ -231,7 +216,25 @@
                   <path d="M5 12l5 5l10 -10"></path>
                 </svg>
                 <span class="text-base leading-normal">
-                  Basic customization options
+                    Soporte comunitario
+                </span>
+              </li>
+              <li class="flex items-center gap-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check size-4"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path d="M5 12l5 5l10 -10"></path>
+                </svg>
+                <span class="text-base leading-normal">
+                    Opciones básicas de personalización
                 </span>
               </li>
             </ul>
@@ -244,17 +247,17 @@
       >
         <div>
           <div
-            class="flex flex-col gap-4 p-8 bg-white/10 rounded-[1.3rem] h-full "
+            class="flex flex-col gap-4 p-8 bg-white/10 rounded-[1.3rem] h-full"
           >
             <div class="flex items-start justify-between w-full">
               <div>
                 <h3
                   class="text-lg leading-normal sm:text-xl md:text-2xl font-medium text-white"
                 >
-                  Momentum
+                  Empresarial
                 </h3>
                 <p class="text-base leading-normal font-medium text-base-200">
-                  For startups
+                    Para startups
                 </p>
               </div>
               <span
@@ -264,8 +267,7 @@
               </span>
             </div>
             <p class="text-base leading-normal font-medium text-base-200">
-              Tailored for expanding businesses, this tier offers advanced tools
-              and analytics.
+              Para empresas en crecimiento que necesitan mayor control y automatización.
             </p>
           </div>
         </div>
@@ -280,9 +282,9 @@
             <span
               class="text-sm font-normal font-sans tracking-normal text-white/50"
             >
-              <span x-show="duration === 'monthly'">/month</span>
+              <span x-show="duration === 'monthly'">/mensual</span>
               <span x-show="duration === 'annual'" style="display: none"
-                >/annually</span
+                >/anual</span
               >
             </span>
           </p>
@@ -290,14 +292,14 @@
             <button
               class="flex items-center justify-center transition-all duration-200 focus:ring-2 focus:outline-none text-base-500 bg-white hover:text-accent-500 ring-1 ring-base-200 focus:ring-accent-500 h-9 px-4 py-2 text-sm font-medium rounded-md w-full"
             >
-              Get Started
+              Comenzar
             </button>
           </div>
           <div class="mt-8">
             <p
               class="text-sm leading-normal font-medium uppercase text-base-200"
             >
-              Momentum plan includes:
+              Plan Corporativo Incluye:
             </p>
             <ul class="flex flex-col mt-4 gap-y-3 text-base-200" role="list">
               <li class="flex items-center gap-2">
@@ -314,7 +316,7 @@
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                   <path d="M5 12l5 5l10 -10"></path>
                 </svg>
-                <span class="text-base leading-normal"> Unlimited teams </span>
+                <span class="text-base leading-normal"> Equipos Ilimitados </span>
               </li>
               <li class="flex items-center gap-2">
                 <svg
@@ -331,7 +333,7 @@
                   <path d="M5 12l5 5l10 -10"></path>
                 </svg>
                 <span class="text-base leading-normal">
-                  Private teams and guests
+                    Equipos privados e invitados
                 </span>
               </li>
               <li class="flex items-center gap-2">
@@ -348,7 +350,7 @@
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                   <path d="M5 12l5 5l10 -10"></path>
                 </svg>
-                <span class="text-base leading-normal"> Insights </span>
+                <span class="text-base leading-normal"> Información </span>
               </li>
               <li class="flex items-center gap-2">
                 <svg
@@ -365,25 +367,7 @@
                   <path d="M5 12l5 5l10 -10"></path>
                 </svg>
                 <span class="text-base leading-normal">
-                  Custom branding options
-                </span>
-              </li>
-              <li class="flex items-center gap-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check size-4"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                  <path d="M5 12l5 5l10 -10"></path>
-                </svg>
-                <span class="text-base leading-normal">
-                  Collaboration tools
+                    Opciones de personalización de marca
                 </span>
               </li>
               <li class="flex items-center gap-2">
@@ -401,7 +385,25 @@
                   <path d="M5 12l5 5l10 -10"></path>
                 </svg>
                 <span class="text-base leading-normal">
-                  Mobile app access
+                    Herramientas de colaboración
+                </span>
+              </li>
+              <li class="flex items-center gap-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check size-4"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path d="M5 12l5 5l10 -10"></path>
+                </svg>
+                <span class="text-base leading-normal">
+                    Acceso a la aplicación móvil
                 </span>
               </li>
             </ul>
@@ -414,23 +416,22 @@
       >
         <div>
           <div
-            class="flex flex-col gap-4 p-8 bg-white/10 rounded-[1.3rem] h-full "
+            class="flex flex-col gap-4 p-8 bg-white/10 rounded-[1.3rem] h-full"
           >
             <div class="flex items-start justify-between w-full">
               <div>
                 <h3
                   class="text-lg leading-normal sm:text-xl md:text-2xl font-medium text-white"
                 >
-                  Growth
+                Corporativo
                 </h3>
                 <p class="text-base leading-normal font-medium text-base-200">
-                  For corporates
+                    Para corporativos
                 </p>
               </div>
             </div>
             <p class="text-base leading-normal font-medium text-base-200">
-              Designed for established businesses, providing comprehensive
-              tools.
+              Para grandes empresas con operaciones complejas y necesidades avanzadas.
             </p>
           </div>
         </div>
@@ -445,9 +446,9 @@
             <span
               class="text-sm font-normal font-sans tracking-normal text-accent-100"
             >
-              <span x-show="duration === 'monthly'">/month</span>
+              <span x-show="duration === 'monthly'">/mensual</span>
               <span x-show="duration === 'annual'" style="display: none"
-                >/annually</span
+                >/anual</span
               >
             </span>
           </p>
@@ -455,14 +456,14 @@
             <button
               class="flex items-center justify-center transition-all duration-200 focus:ring-2 focus:outline-none text-base-500 bg-white hover:text-accent-500 ring-1 ring-base-200 focus:ring-accent-500 h-9 px-4 py-2 text-sm font-medium rounded-md w-full"
             >
-              Get Started
+              Comenzar
             </button>
           </div>
           <div class="mt-8">
             <p
               class="text-sm leading-normal font-medium uppercase text-base-200"
             >
-              Growth plan includes:
+              Plan corporativo Incluye:
             </p>
             <ul class="flex flex-col mt-4 gap-y-3 text-base-200" role="list">
               <li class="flex items-center gap-2">
@@ -480,7 +481,7 @@
                   <path d="M5 12l5 5l10 -10"></path>
                 </svg>
                 <span class="text-base leading-normal">
-                  Unlimited members
+                    Miembros ilimitados
                 </span>
               </li>
               <li class="flex items-center gap-2">
@@ -498,7 +499,7 @@
                   <path d="M5 12l5 5l10 -10"></path>
                 </svg>
                 <span class="text-base leading-normal">
-                  Advanced analytics
+                    Análisis avanzados
                 </span>
               </li>
               <li class="flex items-center gap-2">
@@ -515,7 +516,7 @@
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                   <path d="M5 12l5 5l10 -10"></path>
                 </svg>
-                <span class="text-base leading-normal"> Priority support </span>
+                <span class="text-base leading-normal"> Soporte prioritario </span>
               </li>
               <li class="flex items-center gap-2">
                 <svg
@@ -532,25 +533,7 @@
                   <path d="M5 12l5 5l10 -10"></path>
                 </svg>
                 <span class="text-base leading-normal">
-                  Custom API integration
-                </span>
-              </li>
-              <li class="flex items-center gap-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check size-4"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                  <path d="M5 12l5 5l10 -10"></path>
-                </svg>
-                <span class="text-base leading-normal">
-                  Unlimited storage
+                    Integración de API personalizada
                 </span>
               </li>
               <li class="flex items-center gap-2">
@@ -568,7 +551,25 @@
                   <path d="M5 12l5 5l10 -10"></path>
                 </svg>
                 <span class="text-base leading-normal">
-                  Enhanced security
+                    Almacenamiento ilimitado
+                </span>
+              </li>
+              <li class="flex items-center gap-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check size-4"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path d="M5 12l5 5l10 -10"></path>
+                </svg>
+                <span class="text-base leading-normal">
+                    Seguridad mejorada
                 </span>
               </li>
             </ul>

@@ -1,14 +1,21 @@
 ---
 import "../styles/global.css";
+
+// Importar configuración
+import { siteConfig } from '@utils/config';
+
+// Obtener la URL canónica completa para la página actual
+const fullCanonicalUrl = new URL(Astro.url.pathname, siteConfig.canonicalUrl).href;
+ const {title, description }= Astro.props;
 ---
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <!-- Basic Meta Tags -->
-<title>Your Website Title</title>
+<title>{title}</title>
 <meta
   name="description"
-  content="A brief description of your website content."
+  content={description}
 />
 <meta name="keywords" content="keyword1, keyword2, keyword3" />
 <meta name="author" content="Your Name or Company Name" />
