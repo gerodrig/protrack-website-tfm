@@ -1,0 +1,60 @@
+---
+// src/pages/support.astro
+// import ContactForm from '../components/ContactForm.astro';
+---
+
+  <!-- Hero Section -->
+  <section class="text-center my-16">
+    <h1 class="text-4xl font-bold text-gray-900 mb-4">Soporte ProTrack</h1>
+    <p class="text-xl text-gray-600 mb-8">Asistencia técnica y recursos para optimizar tu experiencia</p>
+    
+    <div class="grid md:grid-cols-3 gap-8 mb-12">
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <h3 class="text-xl font-semibold mb-4">📞 Soporte Prioritario</h3>
+        <p class="text-gray-600 mb-4">Disponible 24/7 para emergencias críticas</p>
+        <a href="tel:+12345678901" class="text-blue-600 hover:underline">+12 345 678 901</a>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <h3 class="text-xl font-semibold mb-4">📨 Soporte General</h3>
+        <p class="text-gray-600 mb-4">Lunes a Viernes: 8 AM - 6 PM</p>
+        <a href="mailto:support@protrack.solutions" class="text-blue-600 hover:underline">support@protrack.solutions</a>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <h3 class="text-xl font-semibold mb-4">📚 Base de Conocimientos</h3>
+        <p class="text-gray-600 mb-4">Documentación técnica y guías de usuario</p>
+        <a href="/docs" class="text-blue-600 hover:underline">Acceder a recursos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulario de Contacto -->
+  <section class="my-16">
+    <h2 class="text-3xl font-bold text-center mb-8">Contacto Directo</h2>
+    <div class="max-w-2xl mx-auto">
+      <!-- <ContactForm /> -->
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="my-16">
+    <h2 class="text-3xl font-bold text-center mb-8">Preguntas Frecuentes</h2>
+    <div class="space-y-4 max-w-3xl mx-auto">
+      <div class="border rounded-lg p-4">
+        <h3 class="font-semibold text-lg mb-2">¿Cómo reportar una incidencia crítica?</h3>
+        <p class="text-gray-600">Usa nuestro número de soporte prioritario disponible 24/7 para reportar emergencias técnicas que afecten tus operaciones.</p>
+      </div>
+      
+      <div class="border rounded-lg p-4">
+        <h3 class="font-semibold text-lg mb-2">¿Dónde encontrar documentación técnica?</h3>
+        <p class="text-gray-600">Visita nuestra <a href="/docs" class="text-blue-600 hover:underline">base de conocimientos</a> para acceder a manuales, guías de implementación y mejores prácticas.</p>
+      </div>
+    </div>
+  </section>
+
+<style>
+  .hover\\:shadow-lg:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+</style>

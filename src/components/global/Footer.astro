@@ -8,17 +8,18 @@ const sections = [
       { name: 'Inicio', href: '/' },
       { name: 'Preguntas Frecuentes', href: '/faq' },
       { name: 'Términos', href: '/terms' },
-      { name: 'Privacidad', href: '/privacidad' },
+      { name: 'Privacidad', href: '/privacy' },
       { name: 'Registrarse', href: '/signup' },
       { name: 'Iniciar Sesión', href: '/signin' },
+      { name: 'Soporte', href: '/support' },
     ],
   },
   {
     title: 'Recursos',
     links: [
       {
-        name: 'GitHub repo',
-        href: 'https://github.com/gerodrig',
+        name: 'GitHub Repository',
+        href: 'https://github.com/gerodrig/protrack-website-tfm',
       },
     ],
   },
@@ -90,16 +91,18 @@ const year = new Date().getFullYear();
           sections.map(({ title, links }) => (
             <div class="mt-12 md:mt-0">
               <h3 class="text-lg text-black font-medium tracking-tight">
-                {title}
+          {title}
               </h3>
               <ul role="list" class="mt-4 space-y-1">
-                {links.map(({ name, href }) => (
-                  <li>
-                    <a href={href} class="hover:text-black">
-                      {name}
-                    </a>
-                  </li>
-                ))}
+          {links.map(({ name, href }) => (
+            <li>
+              <a 
+                href={href} 
+                class={`hover:text-black ${name === "Soporte" ? "text-blue-500 animate-pulse" : ""}`}>
+                {name}
+              </a>
+            </li>
+          ))}
               </ul>
             </div>
           ))
